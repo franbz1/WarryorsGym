@@ -432,21 +432,17 @@
 
           <div class="modal-body">
             <form class="membership-form webform" role="form">
-                <input type="text" class="form-control" name="cf-name" placeholder="Nombre">
+                <input type="text" class="form-control" name="cf-name" id="txtNombreMebresia" placeholder="Nombre">
 
-                <input type="email" class="form-control" name="cf-email" placeholder="Email">
+                <input type="email" class="form-control" name="cf-email" id="txtEmailMebresia" placeholder="Email">
 
-                <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" id="txtTelefonoMmebresia" required>
 
-                <textarea class="form-control" rows="3" name="cf-message" placeholder="Mensaje adicional"></textarea>
+                <textarea class="form-control" rows="3" name="cf-message" id="txtMensajeMebresia" placeholder="Mensaje adicional"></textarea>
 
-                <button type="submit" class="form-control" id="submit-button" name="submit">Enviar</button>
+                <a onclick="reguistarUsuario()" href="#" class="form-control" id="submit-button1" name="submit">Enviar</a>
 
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="signup-agree">
-                    <label class="custom-control-label text-small text-muted" for="signup-agree">Estoy deacuerdo con <a href="#">Terminos &amp; Condiciones</a>
-                    </label>
-                </div>
+
             </form>
           </div>
 
@@ -462,6 +458,7 @@
      <script src="js/aos.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
+     <script src="js/usuarioMembresia.js"></script>
 
 </body>
 </html>
