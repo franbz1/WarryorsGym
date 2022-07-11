@@ -3,7 +3,6 @@ $(document).ready(function() {
 });
 
 async function registrarUsuario() {
-    alert('funciona');
       let datos = {};
       datos.nombre = document.getElementById('txtNombreMebresia').value;
       datos.email = document.getElementById('txtEmailMebresia').value;
@@ -19,6 +18,5 @@ async function registrarUsuario() {
         body: JSON.stringify(datos)
       });
       alert("La cuenta fue creada con exito!");
-      window.location.href = 'login.html'
 
 }
