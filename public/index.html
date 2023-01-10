@@ -13,12 +13,12 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/public/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/public/css/aos.css" />
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/tooplate-gymso-style.css" />
+    <link rel="stylesheet" href="/public/css/tooplate-gymso-style.css" />
   </head>
 
   <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
@@ -237,7 +237,7 @@
           >
             <div class="team-thumb">
               <img
-                src="images/team/team-image.jpg"
+                src="/public/images/team/team-image.jpg"
                 class="img-fluid"
                 alt="Trainer"
               />
@@ -261,7 +261,7 @@
           >
             <div class="team-thumb">
               <img
-                src="images/team/team-image01.jpg"
+                src="/public/images/team/team-image01.jpg"
                 class="img-fluid"
                 alt="Trainer"
               />
@@ -300,7 +300,7 @@
           >
             <div class="class-thumb">
               <img
-                src="images/class/yoga-class.jpg"
+                src="/public/images/class/yoga-class.jpg"
                 class="img-fluid"
                 alt="Class"
               />
@@ -327,7 +327,7 @@
           >
             <div class="class-thumb">
               <img
-                src="images/class/mma-class.jpg"
+                src="/public/images/class/mma-class.jpg"
                 class="img-fluid"
                 alt="Class"
               />
@@ -356,7 +356,7 @@
           >
             <div class="class-thumb">
               <img
-                src="images/class/cardio-class.jpg"
+                src="/public/images/class/cardio-class.jpg"
                 class="img-fluid"
                 alt="Class"
               />
@@ -502,7 +502,8 @@
             </h2>
 
             <form
-              action="#"
+              id="form1"
+              action="/warryorsgym1post1"
               method="post"
               class="contact-form webform"
               data-aos="fade-up"
@@ -512,21 +513,21 @@
               <input
                 type="text"
                 class="form-control"
-                name="cf-name"
+                name="name"
                 placeholder="Nombre"
               />
 
               <input
                 type="email"
                 class="form-control"
-                name="cf-email"
+                name="email"
                 placeholder="Email"
               />
 
               <textarea
                 class="form-control"
                 rows="5"
-                name="cf-message"
+                name="message"
                 placeholder="Mensaje"
               ></textarea>
 
@@ -673,11 +674,23 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/usuarioMembresia.js"></script>
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="/public/js/aos.js"></script>
+    <script src="/public/js/smoothscroll.js"></script>
+    <script src="/public/js/custom.js"></script>
+    <script>
+      const form = document.getElementById('form1');
+        form.addEventListener('submit', (event) => {
+        event.preventDefault(); // evita el envío del formulario
+        console.log(new FormData(form));
+        fetch('/warryorsgym1post1', {
+          method: 'POST',
+          body: new FormData(form)
+        }).then((response) => response.text()) // obtener la respuesta del servidor
+          .then((result) => console.log(result)) // mostrar la respuesta del servidor en la consola
+          .catch((error) => console.error(error)); // manejar cualquier error
+      });
+    </script>
   </body>
 </html>
