@@ -1,17 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('form').addEventListener('submit', submitForm);
-});
+const form = document.getElementById("form1");
 
-function submitForm(event) {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  // obtener los datos del formulario
-  const formData = new FormData(event.target);
-  // enviar la solicitud de formulario mediante AJAX
-  fetch("/warryorsgym1post1", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.text()) // obtener la respuesta del servidor
-    .then((result) => console.log(result)) // mostrar la respuesta del servidor en la consola
-    .catch((error) => console.error(error)); // manejar cualquier error
+
+  const formData = new FormData(form);
+  const data = {};
+  for (const [key, value] of formData.entries()) {
+      data[key] = value;
+  }
+  delete data["submit-button"];
+
+  try {
+    const response = await fetch("/warryors1post1", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+  });
+    if (response.ok) {
+      alert("Datos enviados con éxito!");
+    } else {
+      alert("Ocurrió un problema con el envío de datos!");
+  }
+} catch (error) {
+  console.error(error);
 }
+});
