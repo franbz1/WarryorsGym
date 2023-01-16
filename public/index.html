@@ -13,6 +13,7 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
 
+    <link rel="icon" type="image/x-icon" href="/public/images/crested-helmet_39264.ico">
     <link rel="stylesheet" href="/public/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/public/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/public/css/aos.css" />
@@ -107,7 +108,7 @@
               </h6>
 
               <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">
-                Mejora tu cuerpo en Warriors Gym
+                Soy mas fuerte que las excusas <br> Warriors Gym
               </h1>
 
               <a
@@ -219,15 +220,7 @@
               además se encuentre proximo al lugar donde vivían o trabajaban.
             </p>
 
-            <p data-aos="fade-up" data-aos-delay="500">
-              Si tienes cualquier inquietud no dudes en
-              <a
-                rel="nofollow"
-                href="https://www.tooplate.com/view/2119-gymso-fitness"
-                target="_parent"
-                >escribirnos</a
-              >, nos pondremos en contacto contigo inmediatamente
-            </p>
+
           </div>
 
           <div
@@ -626,27 +619,32 @@
           </div>
 
           <div class="modal-body">
-            <form class="membership-form webform" role="form">
+            <form class="membership-form webform"
+                  role="form" 
+                  id="form2"
+                  action="/warryors1post2"
+                  method="post"> 
               <input
                 type="text"
                 class="form-control"
-                name="cf-name"
-                id="txtNombreMebresia"
+                id="name"
+                name="name"
                 placeholder="Nombre"
               />
 
               <input
                 type="email"
                 class="form-control"
-                name="cf-email"
-                id="txtEmailMebresia"
+                name="email"
+                id="email"
                 placeholder="Email"
               />
 
               <input
                 type="tel"
                 class="form-control"
-                name="cf-phone"
+                name="phone"
+                id="phone"
                 placeholder="123-456-7890"
                 id="txtTelefonoMebresia"
                 required
@@ -655,19 +653,19 @@
               <textarea
                 class="form-control"
                 rows="3"
-                name="cf-message"
-                id="txtMensajeMembresia"
+                name="message"
+                id="message"
                 placeholder="Mensaje adicional"
               ></textarea>
 
-              <a
-                onclick="registrarUsuario()"
-                href="#"
+              <button
+                type="submit"
                 class="form-control"
-                id="submit-button1"
-                name="submit"
-                >Enviar</a
+                id="submit-button"
+                name="submit-button"
               >
+                Enviar mensaje
+              </button>
             </form>
           </div>
 
@@ -683,6 +681,5 @@
     <script src="/public/js/smoothscroll.js"></script>
     <script src="/public/js/custom.js"></script>
     <script src="/public/js/asyncForm.js"></script>
-    <!--<script src="/public/js/asyncForm.js"></script>-->
   </body>
 </html>
