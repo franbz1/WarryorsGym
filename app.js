@@ -27,16 +27,16 @@ app.post("/warryors1post1", (req, res) => {
     console.log(req.body);
 
     let transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: '',
       auth: {
-          user: "warryorsgym@gmail.com",
-          pass: "dsxciwkvtegohmej",
+          user: "",
+          pass: "",
       },
   })
 
   let mailOptions = {
-    from: "warryorsgym@gmail.com",
-    to: "franciscorualesp15@gmail.com",
+    from: "",
+    to: "",
     subject: "Nuevo formulario de contacto",
     html: `
     <p>Nombre: ${data.name}</p>
@@ -70,16 +70,16 @@ app.post("/warryors1post2", (req, res) => {
     console.log(req.body);
 
     let transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: '',
       auth: {
-          user: "warryorsgym@gmail.com",
-          pass: "dsxciwkvtegohmej",
+          user: "",
+          pass: "",
       },
   })
 
   let mailOptions = {
-    from: "warryorsgym@gmail.com",
-    to: "franciscorualesp15@gmail.com",
+    from: "",
+    to: "",
     subject: "Nuevo formulario de contacto",
     html: `
     <p>Nombre: ${data.name}</p>
